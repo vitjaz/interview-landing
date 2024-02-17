@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мам, я устроился! - Сервис подготовки к собеседованию в компанию мечты</title>
+  <title>Мама, я устроился! - Сервис подготовки к собеседованию в компанию мечты</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,14 +27,14 @@
     <menu>
       <nav class="navigation navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Мам, я устроился!</a>
+          <a class="navbar-brand" href="#">Мама, я устроился!</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#about">О сервисе</a>
+                <a class="nav-link" aria-current="page" href="#about">О сервисе</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#experts">Эксперты</a>
@@ -44,18 +45,26 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#faq" aria-disabled="true">FAQ</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#" aria-disabled="true"><i class="bi bi-gift-fill" style="font-size: 17px;color: blueviolet;"></i></a>
+              </li>
             </ul>
           <div class="grow"></div>
-          <button type="button" class="btn btn-primary main-button">Получить консультацию</button>
+          <button type="button" class="btn btn-primary main-button" data-bs-toggle="modal" data-bs-target="#formModal">Стать экспертом</button>
         </div>
         </div>
     </nav>
     </menu>
     <main>
       <div class="container main">
-        <h1 class="main-title">Мам, я устроился!</h1>
-        <h4>Сервис для тех, кто ищет <span id="main-dynamic-word">ВОЗМОЖНОСТИ</span></h4>
-        <img id="main_picture" class="img-fluid" src="./static/pictures/man-on-work.webp" alt="Man working" />
+        <div class="main-block">
+          <div class="left">
+            <h1 class="main-title">Мама, я устроился!</h1>
+            <h4>Сервис для тех, кто ищет <span id="main-dynamic-word">ВОЗМОЖНОСТИ</span></h4>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#formModal">Записаться на интервью</button>
+          </div>
+          <img id="main_picture" class="img-fluid" src="./static/pictures/man-on-work.webp" alt="Man working" />
+        </div>
       </div>
       <div class="container second-block bg-primary">
         <div class="main-block">
@@ -127,7 +136,7 @@
       <div class="container" id="about">
         <div class="about-us-block">
           <p class="title">Кто мы?</p>
-          <p class="sub-title">"Мам, я устроился!" - это сервис полной поддержки для тех, кто ищет работу, обучает и принимает на работу.</p>
+          <p class="sub-title">"Мама, я устроился!" - это сервис полной поддержки для тех, кто ищет работу, обучает и принимает на работу.</p>
           <p class="team-title">В нашей команде:</p>
           <div class="cards">
             <div>HR-специалисты</div>
@@ -142,7 +151,7 @@
       </div>
       <div class="container" id="experts">
         <div class="experts-block">
-          <p class="title">Эксперты сервиса "Мам, я уволился!":</p>
+          <p class="title">Эксперты сервиса "Мама, я уволился!":</p>
           <div id="carouselExampleDark" class="carousel carousel-dark slide">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -262,10 +271,114 @@
       </div>
       <div class="container">2024 @ Все права защищены</div>
     </main>
+
+<!-- Modal -->
+<div class="modal fade" id="formModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="formModalLabel">Форма обратной связи</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="form-in-modal" class="was-validated">
+          <!-- Имя -->
+        <div class="mb-2">
+          <label for="first_name_input" class="form-label">Имя</label>
+          <input type="text" class="form-control is-valid" id="first_name_input" required>
+          <div class="invalid-feedback">Нам оно обязательно нужно</div>
+        </div>
+          <!-- Фамилия -->
+        <div class="mb-2">
+          <label for="last_name_input" class="form-label">Фамилия</label>
+          <input type="text" class="form-control is-valid" id="last_name_input" required>
+          <div class="invalid-feedback">Нам оно обязательно нужно</div>
+        </div>
+        <!-- Email -->
+        <div class="mb-2">
+          <label for="email_input" class="form-label">Email</label>
+          <input type="text" class="form-control is-valid" id="email_input" required>
+          <div class="invalid-feedback">Для связи с нами</div>
+        </div>
+        <!-- Телефон -->
+        <div class="mb-2">
+          <label for="phone_input" class="form-label">Телефон</label>
+          <input type="text" class="form-control is-valid" id="phone_input" required>
+          <div class="invalid-feedback">Для связи с нами</div>
+        </div>
+        
+
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="privacy_check" required>
+          <label class="form-check-label" for="privacy_check">Согласен с обработкой персональных данных и новостной рассылкой</label>
+          <div class="invalid-feedback">Без согласия не получится</div>
+        </div>
+
+        <div class="mb-3">
+          <select id="direction_select" class="form-select" required aria-label="select example">
+            <option value="">Выберите направление</option>
+            <option value="Any">Пока еще не понимаю...</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Analysis">Аналитика</option>
+            <option value="Testing">Тестирование</option>
+          </select>
+          <div class="invalid-feedback">Выберите одно из направлений</div>
+        </div>
+        <div class="mb-3">
+        <label for="textAreaComment" class="form-label">Любой комментарий</label>
+        <textarea class="form-control" id="textAreaComment" rows="3"></textarea>
+      </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button id="submit-button" type="button" class="btn btn-primary" data-bs-dismiss="modal">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="errorModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="errorModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h1 class="modal-title fs-5" id="errorModalLabel">Ошибка</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Нужно заполнить форму
+      </div>
+      <div class="modal-footer">
+        <button id="submit-button" type="button" class="btn btn-danger" data-bs-dismiss="modal">Заполню</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="successModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h1 class="modal-title fs-5" id="successModalLabel">Успешно!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Спасибо за доверие! В ближайшее время с вами свяжутся
+      </div>
+      <div class="modal-footer">
+        <button id="submit-button" type="button" class="btn btn-success" data-bs-dismiss="modal">Хорошо</button>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
   <script src="./js/change-main-words.js"></script> 
   <script src="./js/scrollDirection.js"></script>
   <script src="./js/intersectionObserver.js"></script>
+  <script src="./js/formDialogHandler.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>

@@ -9,7 +9,6 @@ const cardsInBlockTwo = document.getElementsByClassName('card-second-block')
 
 let count = 0
 const callback = (entries) => {
-  console.log(cardsInBlockTwo)
   if (!count) {
     if (entries[0].isIntersecting) {
     blockTwo.classList.remove(['second-block-hide'])

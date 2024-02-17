@@ -26,13 +26,24 @@ h5 {
   flex: 1;
 }
 .root main {
-  padding-top: 20rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   gap: 50px;
+  flex-basis: auto;
 }
 .root main .main {
-  height: 500px;
+  min-height: 600px;
+}
+.root main .main-block {
+  display: flex;
+  align-items: center;
+}
+.root main .main-block .left {
+  width: 300rem;
+}
+.root main .main-block .left button {
+  margin-top: 30px;
 }
 .root main .main-title {
   font-size: 3rem;
@@ -65,11 +76,7 @@ h5 {
   }
 }
 .root main .main #main_picture {
-  position: absolute;
-  top: 30px;
-  right: -200px;
-  width: 1200px;
-  height: 700px;
+  overflow: auto;
 }
 .root main .second-block {
   border-radius: 40px;
@@ -80,6 +87,8 @@ h5 {
 .root main .second-block .main-block {
   color: white;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .root main .second-block .main-block .title {
   font-size: 40px;
