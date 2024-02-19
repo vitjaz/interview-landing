@@ -151,7 +151,7 @@
       </div>
       <div class="container" id="experts">
         <div class="experts-block">
-          <p class="title">Эксперты сервиса "Мама, я уволился!":</p>
+          <p class="title">Эксперты сервиса "Мама, я устроился!":</p>
           <div id="carouselExampleDark" class="carousel carousel-dark slide">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -317,11 +317,11 @@
         <div class="mb-3">
           <select id="direction_select" class="form-select" required aria-label="select example">
             <option value="">Выберите направление</option>
-            <option value="Any">Пока еще не понимаю...</option>
-            <option value="Frontend">Frontend</option>
-            <option value="Backend">Backend</option>
-            <option value="Analysis">Аналитика</option>
-            <option value="Testing">Тестирование</option>
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="analytics">Аналитика</option>
+            <option value="testing">Тестирование</option>
+            <option value="devops">DevOps</option>
           </select>
           <div class="invalid-feedback">Выберите одно из направлений</div>
         </div>
@@ -348,10 +348,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Нужно заполнить форму
+        Что то пошло не так!
       </div>
       <div class="modal-footer">
-        <button id="submit-button" type="button" class="btn btn-danger" data-bs-dismiss="modal">Заполню</button>
+        <button id="submit-button" type="button" class="btn btn-danger" data-bs-dismiss="modal">Ок</button>
       </div>
     </div>
   </div>
@@ -375,6 +375,7 @@
   </div>
 </div>
   </div>
+  <script src="./js/postForm.js"></script>
   <script src="./js/change-main-words.js"></script> 
   <script src="./js/scrollDirection.js"></script>
   <script src="./js/intersectionObserver.js"></script>

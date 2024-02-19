@@ -8,13 +8,33 @@ const directionSelect = document.getElementById('direction_select')
 const commentInput = document.getElementById('textAreaComment')
 
 
-submitButton.addEventListener('click', () => {
+submitButton.addEventListener('click', async () => {
   const canSubmit = !!(firstNameInput.value && lastNameInput.value && emailInput.value && phoneInput.value && privecyCheck.checked && directionSelect.value)
 
   if (canSubmit) {
     // submit form
     const formModal = new bootstrap.Modal(document.getElementById('formModal'))
     formModal.hide()
+
+    try {
+      const data = {
+        first_name: firstNameInput.value,
+        last_name: lastNameInput.value,
+        email: emailInput.value,
+        phone: phoneInput.value,
+        subject: directionSelect.value,
+        comment: commentInput.value
+      }
+
+      const res = await postForm(data)
+      console.log(res)
+      
+    } catch (error) {
+      console.log(error)
+      const errorModal = new bootstrap.Modal(document.getElementById('errorModal'))
+      errorModal.show()
+      return
+    }
 
     const successModal = new bootstrap.Modal(document.getElementById('successModal'))
     successModal.show()
@@ -26,13 +46,12 @@ submitButton.addEventListener('click', () => {
     errorModal.show()
   }
 
-  // console.log(firstNameInput.value)
-  // console.log(lastNameInput.value)
-  // console.log(emailInput.value)
-  // console.log(phoneInput.value)
-  // console.log(privecyCheck.checked)
-  // console.log(directionSelect.value)
-  // console.log(commentInput.value)
+  console.log(firstNameInput.value)
+  console.log(lastNameInput.value)
+  console.log(emailInput.value)
+  console.log(phoneInput.value)
+  console.log(privecyCheck.checked)
+  console.log(directionSelect.value)
+  console.log(commentInput.value)
     console.log(canSubmit)
- 
 })
