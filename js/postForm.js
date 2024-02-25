@@ -1,6 +1,6 @@
 const postForm = async (formData) => {
 
-  const response = await fetch('http://217.107.34.223:81/docs/orders', {
+  const response = await fetch('https://iv.fizzbuzzcorp.ru/orders', {
     method: 'POST',
     body: JSON.stringify(formData),
     headers: {

@@ -45,13 +45,4 @@ submitButton.addEventListener('click', async () => {
     const errorModal = new bootstrap.Modal(document.getElementById('errorModal'))
     errorModal.show()
   }
-
-  console.log(firstNameInput.value)
-  console.log(lastNameInput.value)
-  console.log(emailInput.value)
-  console.log(phoneInput.value)
-  console.log(privecyCheck.checked)
-  console.log(directionSelect.value)
-  console.log(commentInput.value)
-    console.log(canSubmit)
 })
